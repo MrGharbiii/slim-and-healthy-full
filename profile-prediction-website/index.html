@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prédicteur de Profil d'Obésité</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Prédicteur de Profil d'Obésité</h1>
+            <p>Remplissez le formulaire ci-dessous pour prédire votre profil d'obésité.</p>
+        </header>
+
+        <main>
+            <form id="obesity-form">
+                <div class="form-section">
+                    <h2>Informations Personnelles</h2>
+                    
+                    <div class="form-group">
+                        <label for="gender">Sexe :</label>
+                        <select id="gender" name="Sexe" required>
+                            <option value="" disabled selected>Sélectionnez le sexe</option>
+                            <option value="F">Femme</option>
+                            <option value="M">Homme</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Âge :</label>
+                        <input type="number" id="age" name="Age" min="10" max="100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profession">Profession :</label>
+                        <input type="text" id="profession" name="profession" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="children">Nombre d'enfants :</label>
+                        <input type="number" id="children" name="Nb enfants" min="0" max="20" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Conditions Médicales</h2>
+                    
+                    <div class="form-group">
+                        <label for="dt1">Diabète de type 1 :</label>
+                        <select id="dt1" name="DT1" required>
+                            <option value="" disabled selected>Sélectionnez une option</option>
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dt2">Diabète de type 2 :</label>
+                        <select id="dt2" name="DT2" required>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="oui">Yes</option>
+                            <option value="non">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sas">Syndrome d'apnée du sommeil :</label>
+                        <select id="sas" name="SAS" required>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="oui">Yes</option>
+                            <option value="non">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hypothyroidie">Hypothyroïdie :</label>
+                        <select id="hypothyroidie" name="Hypothyroidie" required>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="oui">Yes</option>
+                            <option value="non">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sopk">Syndrome des ovaires polykystiques :</label>
+                        <select id="sopk" name="SOPK" required>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="oui">Yes</option>
+                            <option value="non">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="digestif">Troubles digestifs :</label>
+                        <select id="digestif" name="troubles digestif" required>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="oui">Yes</option>
+                            <option value="non">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sommeil">Troubles du sommeil :</label>
+                        <select id="sommeil" name="trouble du sommeil" required>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="oui">Yes</option>
+                            <option value="non">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Santé Reproductive</h2>
+                    
+                    <div class="form-group">
+                        <label for="contraception">Contraception hormonale :</label>
+                        <select id="contraception" name="contraception hormonale" required>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="oui">Yes</option>
+                            <option value="non">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="accouchement">Accouchement/Avortement récent (< 2 ans) :</label>
+                        <select id="accouchement" name="accouchement / avortement< 2 ans" required>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="oui">Yes</option>
+                            <option value="non">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="menopause">Ménopause/Périménopause :</label>
+                        <select id="menopause" name="Menopause/Peri" required>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="oui">Yes</option>
+                            <option value="non">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Facteurs de Mode de Vie</h2>
+                    
+                    <div class="form-group">
+                        <label for="stress">Niveau de stress :</label>
+                        <select id="stress" name="niveau de stress" required>
+                            <option value="" disabled selected>Sélectionnez le niveau</option>
+                            <option value="faible">Faible</option>
+                            <option value="moyen">Moyen</option>
+                            <option value="élevé">Élevé</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="psychotherapie">En psychothérapie :</label>
+                        <select id="psychotherapie" name="Psychothérapie" required>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="oui">Yes</option>
+                            <option value="non">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="traitement">Traitement anti-obésité antérieur :</label>
+                        <select id="traitement" name="traitement anti-obésité antérieur" required>
+                            <option value="" disabled selected>Sélectionnez une option</option>
+                            <option value="non">Non</option>
+                            <option value="medicament">Médicament</option>
+                            <option value="chirurgie">Chirurgie</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activite">Niveau d'activité :</label>
+                        <select id="activite" name="activité" required>
+                            <option value="" disabled selected>Sélectionnez le niveau</option>
+                            <option value="sédentaire">Sédentaire</option>
+                            <option value="modérée">Modéré</option>
+                            <option value="Sportif">Sportif</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regimes">Régimes antérieurs :</label>
+                        <select id="regimes" name="régimes antérieures" required>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="oui">Yes</option>
+                            <option value="non">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tabac">Tabagisme :</label>
+                        <select id="tabac" name="Tabac" required>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="oui">Yes</option>
+                            <option value="non">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alcool">Consommation d'alcool :</label>
+                        <select id="alcool" name="alcool" required>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="oui">Yes</option>
+                            <option value="non">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sport">Séances de sport par semaine :</label>
+                        <input type="number" id="sport" name="Nombre de séance sport/semaine" min="0" max="20" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="travail">Travail posté :</label>
+                        <select id="travail" name="Travail posté" required>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="oui">Yes</option>
+                            <option value="non">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Mesures Physiques</h2>
+                    
+                    <div class="form-group">
+                        <label for="taille">Taille (cm) :</label>
+                        <input type="number" id="taille" name="Taille" min="100" max="250" step="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="poids">Poids (kg) :</label>
+                        <input type="number" id="poids" name="P0" min="30" max="250" step="0.1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mg">Masse grasse (kg) :</label>
+                        <input type="number" id="mg" name="MG0" min="0" max="150" step="0.1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mm">Masse musculaire (kg) :</label>
+                        <input type="number" id="mm" name="MM0" min="0" max="100" step="0.1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="objectifmg">Objectif de réduction de masse grasse (kg) :</label>
+                        <input type="number" id="objectifmg" name="OBJECTIF MG" min="0" max="100" step="0.1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="objectifmm">Objectif de masse musculaire (kg) :</label>
+                        <input type="number" id="objectifmm" name="Objectif MM" min="0" max="100" step="0.1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tsh">Niveau d'hormone thyroïdienne (TSH) :</label>
+                        <input type="number" id="tsh" name="TSH" min="0" max="20" step="0.01" required>
+                    </div>
+                </div>                <div class="form-section">
+                    <h2>Antécédents Médicaux</h2>
+                    
+                    <div class="form-group">
+                        <label>Antécédents familiaux :</label>
+                        <div id="familial-checkbox-group">
+                            <label><input type="checkbox" name="terrain familial" value="DT1"> DT1</label><br>
+                            <label><input type="checkbox" name="terrain familial" value="DT2"> DT2</label><br>
+                            <label><input type="checkbox" name="terrain familial" value="dysthyroidie"> Dysthyroïdie</label><br>
+                            <label><input type="checkbox" name="terrain familial" value="HTA"> HTA</label><br>
+                            <label><input type="checkbox" name="terrain familial" value="obésité"> Obésité</label><br>
+                            <label><input type="checkbox" name="terrain familial" value="dyslipidémie"> Dyslipidémie</label><br>
+                            <label><input type="checkbox" name="terrain familial" value="Coronaropathie"> Coronaropathie</label><br>
+                            <label><input type="checkbox" name="terrain familial" value="Autisme"> Autisme</label><br>
+                            <label><input type="checkbox" name="terrain familial" value="polypose familiale"> Polypose familiale</label><br>
+                            <label><input type="checkbox" name="terrain familial" value="none" id="familial-none"> Aucun</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Troubles psychologiques :</label>
+                        <div id="troublepsy-checkbox-group">
+                            <label><input type="checkbox" name="trouble psy" value="dépression"> Dépression</label><br>
+                            <label><input type="checkbox" name="trouble psy" value="TCA"> TCA</label><br>
+                            <label><input type="checkbox" name="trouble psy" value="troubles anxieux"> Troubles anxieux</label><br>
+                            <label><input type="checkbox" name="trouble psy" value="anxiété"> Anxiété</label><br>
+                            <label><input type="checkbox" name="trouble psy" value="troubles du sommeil"> Troubles du sommeil</label><br>
+                            <label><input type="checkbox" name="trouble psy" value="bipolarité"> Bipolarité</label><br>
+                            <label><input type="checkbox" name="trouble psy" value="TOC"> TOC</label><br>
+                            <label><input type="checkbox" name="trouble psy" value="trouble panique"> Trouble panique</label><br>
+                            <label><input type="checkbox" name="trouble psy" value="stress post-traumatique"> Stress post-traumatique</label><br>
+                            <label><input type="checkbox" name="trouble psy" value="troubles de l humeur"> Troubles de l'humeur</label><br>
+                            <label><input type="checkbox" name="trouble psy" value="none" id="troublepsy-none"> Aucun</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Traitements en cours :</label>
+                        <div id="treatments-checkbox-group">
+                            <label><input type="checkbox" name="traitements" value="anti-dépresseur"> Anti-dépresseur</label><br>
+                            <label><input type="checkbox" name="traitements" value="levothyrox"> Levothyrox</label><br>
+                            <label><input type="checkbox" name="traitements" value="hypolipémiant"> Hypolipémiant</label><br>
+                            <label><input type="checkbox" name="traitements" value="anti-hypertenseur"> Anti-hypertenseur</label><br>
+                            <label><input type="checkbox" name="traitements" value="Metformine"> Metformine</label><br>
+                            <label><input type="checkbox" name="traitements" value="anxiolytique"> Anxiolytique</label><br>
+                            <label><input type="checkbox" name="traitements" value="insuline"> Insuline</label><br>
+                            <label><input type="checkbox" name="traitements" value="sulfamide"> Sulfamide</label><br>
+                            <label><input type="checkbox" name="traitements" value="contraceptif"> Contraceptif</label><br>
+                            <label><input type="checkbox" name="traitements" value="corticoides"> Corticoïdes</label><br>
+                            <label><input type="checkbox" name="traitements" value="FIV"> FIV</label><br>
+                            <label><input type="checkbox" name="traitements" value="fer"> Fer</label><br>
+                            <label><input type="checkbox" name="traitements" value="statine"> Statine</label><br>
+                            <label><input type="checkbox" name="traitements" value="antalgique"> Antalgique</label><br>
+                            <label><input type="checkbox" name="traitements" value="anti-allergique"> Anti-allergique</label><br>
+                            <label><input type="checkbox" name="traitements" value="none" id="treatments-none"> Aucun</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Prise en charge médicale :</label>
+                        <div id="ttmedical-checkbox-group">
+                            <label><input type="checkbox" name="TT medical" value="Levothyrox"> Levothyrox</label><br>
+                            <label><input type="checkbox" name="TT medical" value="fer"> Fer</label><br>
+                            <label><input type="checkbox" name="TT medical" value="Probiotique"> Probiotique</label><br>
+                            <label><input type="checkbox" name="TT medical" value="Metformine"> Metformine</label><br>
+                            <label><input type="checkbox" name="TT medical" value="IDPP4"> IDPP4</label><br>
+                            <label><input type="checkbox" name="TT medical" value="ISGLT2"> ISGLT2</label><br>
+                            <label><input type="checkbox" name="TT medical" value="Ozempic"> Ozempic</label><br>
+                            <label><input type="checkbox" name="TT medical" value="cabergoline"> Cabergoline</label><br>
+                            <label><input type="checkbox" name="TT medical" value="Mounjaro"> Mounjaro</label><br>
+                            <label><input type="checkbox" name="TT medical" value="Victoza"> Victoza</label><br>
+                            <label><input type="checkbox" name="TT medical" value="contraceptif"> Contraceptif</label><br>
+                            <label><input type="checkbox" name="TT medical" value="antidiabétique"> Antidiabétique</label><br>
+                            <label><input type="checkbox" name="TT medical" value="testosterone"> Testostérone</label><br>
+                            <label><input type="checkbox" name="TT medical" value="SAS"> SAS</label><br>
+                            <label><input type="checkbox" name="TT medical" value="fibrates"> Fibrates</label><br>
+                            <label><input type="checkbox" name="TT medical" value="antidépresseur"> Antidépresseur</label><br>
+                            <label><input type="checkbox" name="TT medical" value="corticothérapie"> Corticothérapie</label><br>
+                            <label><input type="checkbox" name="TT medical" value="none" id="ttmedical-none"> Aucun</label>
+                        </div>
+                    </div>
+                </div>                <div class="form-actions">
+                    <button type="submit" id="predict-button">Prédire le profil d'obésité</button>
+                    <button type="reset" id="reset-button">Réinitialiser le formulaire</button>
+                </div>
+            </form>
+        </main>
+
+        <section id="results-section" class="hidden">
+            <h2>Résultats de la Prédiction</h2>
+            <div id="loading" class="hidden">
+                <p>Traitement de vos données...</p>
+                <div class="spinner"></div>
+            </div>
+            <div id="results-container"></div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Prédicteur de Profil d'Obésité. Tous droits réservés. </p>
+            <p>Dr Ines SLIM | Spécialiste en Diabète, Endocrinologie et Obésité</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
